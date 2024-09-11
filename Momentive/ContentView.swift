@@ -4,21 +4,25 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             // Logo Image (replace with your own image asset)
-            Image(systemName: "star") // This will be your logo
+            Image("Momentive Logo") // This will be your logo
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
-                .padding()
+
 
             // App Name and Tagline
             Text("MOMENTIVE")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.top, 20)
+                .foregroundColor(.white)
+                .padding(.top, 5)
+                .font(.custom("Montserrat-Bold", size: 40))
 
             Text("FOR ALL THE MOMENTS IN YOUR LIFE")
                 .font(.subheadline)
-                .padding(.top, 5)
+                .foregroundColor(.white)
+                .padding(.top, 2)
+                .font(.custom("Montserrat-Bold", size: 40))
 
             Spacer()
 
