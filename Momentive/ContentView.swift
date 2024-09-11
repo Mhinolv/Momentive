@@ -1,88 +1,57 @@
-//
-//  ContentView.swift
-//  Momentive
-//
-//  Created by CodeMonkey on 9/10/24.
-//
-
 import SwiftUI
-import CoreData
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+struct WelcomeView: View {
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        VStack {
+            // Logo Image (replace with your own image asset)
+            Image(systemName: "star") // This will be your logo
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .padding()
+
+            // App Name and Tagline
+            Text("MOMENTIVE")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, 20)
+
+            Text("FOR ALL THE MOMENTS IN YOUR LIFE")
+                .font(.subheadline)
+                .padding(.top, 5)
+
+            Spacer()
+
+            // Get Started Button
+            Button(action: {
+                // Action to go to the next screen
+            }) {
+                Text("Get Started!")
+                    .fontWeight(.bold)
+                    .font(.title)
+                    .padding()
+                    .background(Color.white)
+                    .foregroundColor(.blue)
+                    .cornerRadius(10)
             }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
+            .padding(.bottom, 40)
+
+            // Disclaimer
+            Text("Your data is safe with us. We only use the information you provide for the functionality of this app and will never share or use it for any other purpose.")
+                .font(.footnote)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 20)
+                .padding(.bottom, 20)
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.6), Color.blue]), startPoint: .top, endPoint: .bottom))
+        .ignoresSafeArea()
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
-#Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+struct WelcomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        WelcomeView()
+    }
 }
+
