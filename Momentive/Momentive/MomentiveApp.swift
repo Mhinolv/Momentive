@@ -2,7 +2,7 @@
 //  MomentiveApp.swift
 //  Momentive
 //
-//  Created by CodeMonkey on 9/10/24.
+//  Created by CodeMonkey on 9/11/24.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct MomentiveApp: App {
 
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
