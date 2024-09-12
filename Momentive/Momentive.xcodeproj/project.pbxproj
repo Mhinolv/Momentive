@@ -31,6 +31,9 @@
 		05BD82E12C922B17003C7D04 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05BD82CF2C922B17003C7D04 /* Montserrat-Light.ttf */; };
 		05BD82E22C922B17003C7D04 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05BD82D02C922B17003C7D04 /* Montserrat-SemiBold.ttf */; };
 		05BD82E32C922B17003C7D04 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05BD82D12C922B17003C7D04 /* Montserrat-ExtraBoldItalic.ttf */; };
+		05E7CCF92C926437004BFC37 /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E7CCF82C926437004BFC37 /* Playground.swift */; };
+		05E7CCFC2C92758F004BFC37 /* Qoutes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05E7CCFA2C92758F004BFC37 /* Qoutes.xcdatamodeld */; };
+		05E7CD012C9283D3004BFC37 /* Input - DOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E7CD002C9283D3004BFC37 /* Input - DOB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		05BD82D02C922B17003C7D04 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		05BD82D12C922B17003C7D04 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		05BD82E42C922B35003C7D04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		05E7CCF82C926437004BFC37 /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
+		05E7CCFB2C92758F004BFC37 /* Qoutes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Qoutes.xcdatamodel; sourceTree = "<group>"; };
+		05E7CD002C9283D3004BFC37 /* Input - DOB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input - DOB.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,11 @@
 			children = (
 				05BD82E42C922B35003C7D04 /* Info.plist */,
 				05BD82BF2C922AFE003C7D04 /* Fonts */,
+				05E7CCFD2C9275A4004BFC37 /* Data */,
 				05BD82AC2C922840003C7D04 /* MomentiveApp.swift */,
 				05BD82AE2C922840003C7D04 /* ContentView.swift */,
+				05E7CCF82C926437004BFC37 /* Playground.swift */,
+				05E7CD002C9283D3004BFC37 /* Input - DOB.swift */,
 				05BD82B02C922841003C7D04 /* Assets.xcassets */,
 				05BD82B52C922841003C7D04 /* Persistence.swift */,
 				05BD82B72C922841003C7D04 /* Momentive.xcdatamodeld */,
@@ -135,6 +144,14 @@
 				05BD82CB2C922B17003C7D04 /* Montserrat-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		05E7CCFD2C9275A4004BFC37 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				05E7CCFA2C92758F004BFC37 /* Qoutes.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,9 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E7CCFC2C92758F004BFC37 /* Qoutes.xcdatamodeld in Sources */,
 				05BD82B62C922841003C7D04 /* Persistence.swift in Sources */,
+				05E7CCF92C926437004BFC37 /* Playground.swift in Sources */,
 				05BD82AF2C922840003C7D04 /* ContentView.swift in Sources */,
 				05BD82B92C922841003C7D04 /* Momentive.xcdatamodeld in Sources */,
+				05E7CD012C9283D3004BFC37 /* Input - DOB.swift in Sources */,
 				05BD82AD2C922840003C7D04 /* MomentiveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +465,16 @@
 			);
 			currentVersion = 05BD82B82C922841003C7D04 /* Momentive.xcdatamodel */;
 			path = Momentive.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		05E7CCFA2C92758F004BFC37 /* Qoutes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				05E7CCFB2C92758F004BFC37 /* Qoutes.xcdatamodel */,
+			);
+			currentVersion = 05E7CCFB2C92758F004BFC37 /* Qoutes.xcdatamodel */;
+			path = Qoutes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

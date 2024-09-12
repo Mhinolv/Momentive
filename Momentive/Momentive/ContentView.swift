@@ -6,58 +6,56 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
     var body: some View {
-        GeometryReader { geometry in
-            VStack{
+        VStack {
+            
+            Spacer()
+            
+            Image("Momentive Logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 125, height: 125)
+                .padding(.bottom,0.5)
+            
+            Text("MOMENTIVE")
+                .foregroundColor(.white)
+                .font(.custom("Montserrat-Bold",size: 40))
+            
+            Text("Making the most of every moment")
+                .foregroundColor(.white)
+                .font(.custom("Montserrat-Regular",size:15))
+            
+            Button(action: {
                 
-                Image("Momentive Logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
-                    .position(x: geometry.size.width / 2, y: geometry.size.height * 0.4)
+            }) {
+            Text("Get Started")
 
-                Text("MOMENTIVE")
-                    .foregroundColor(.white)
-                    .font(.custom("Montserrat-Bold",size: 40))
-                    .position(x: geometry.size.width / 2, y: geometry.size.height * 0.30)
-
-                Text("MAKING THE MOST OF EVERY MOMENT")
-                    .foregroundColor(.white)
-                    .font(.custom("Montserrat-SemiBold",size: 14))
-                    .position(x: geometry.size.width / 2, y: geometry.size.height * 0.11)
-
-                
-                Button(action: {
-                    // Button action
-                }) {
-                    Text("Get Started")
-                        .font(.custom("Montserrat-SemiBold",size: 25))
-                        .padding(.horizontal,50)
-                        .padding(.vertical,10)
-                        .background(Color.white)
-                        .foregroundColor(.black)
-                        .cornerRadius(15)
-                        .position(x: geometry.size.width / 2, y: geometry.size.height * 0.001)
-                }
-                
-                Text("Your data is safe with us. We only use the information you provide for the functionality of this app and will never share or use it for any other purpose.")
-                    .font(.footnote)
-                    .padding(.top,50)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 30)
-                
+                .font(.custom("Montserrat-SemiBold", size:25))
+                .padding(.horizontal,45)
+                .padding(.vertical,15)
+                .background(Color.white)
+                .foregroundColor(.black)
+                .cornerRadius(15)
+                .padding(.top,20)
             }
             
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.6), Color.blue]), startPoint: .top, endPoint: .bottom))
-            .ignoresSafeArea()
+            Spacer()
+            
+            Text("Your data is safe with us. We only use the information you provide for the functionality of this app and will never share or use it for any other purpose.")
+                .font(.footnote)
+                .padding(.bottom,20)
+                .padding(.horizontal, 20)
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
             
         }
+
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(LinearGradient(gradient: Gradient(colors: [Color(hex: "#357BE7"), Color(hex: "#0041B2")]), startPoint: .top, endPoint: .bottom))
+        .ignoresSafeArea()
+        
     }
 }
 
